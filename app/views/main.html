@@ -1,0 +1,41 @@
+<div class="jumbotron">
+  <h1>Welcome to <strong>Venn</strong>erator!</h1>
+  <p class="lead">
+    See what I did there?
+  </p>
+</div>
+
+<div class="row">
+  <!-- OH MY GOD IT'S THE CHART! -->
+  <div class="col-sm-6">
+    <div id="chart"></div>
+  </div>
+
+  <!-- OH MY GOD IT'S THE CONFIG! -->
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>First off - how many circlies do yez want?</h3>
+        <input type="number" ng-model="config.numberOfCircles"/>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default" ng-show="config.numberOfCircles">
+      <div class="panel-body">
+        <h3>Coolbeans. What do you want to call each?</h3>
+        <!-- @todo color picker here -->
+        <input type="text" ng-model="'config.circle' + circle" ng-repeat="circle in config.numberOfCircles" />
+      </div>
+    </div>
+
+    <div class="panel panel-default" ng-show="config.circle1">
+      <div class="panel-body">
+        <h3>Ballin'! Put some items in each and I'll **automagically** intersect them fer yez!</h3>
+        <textarea type="text" ng-model="'config.dataCircle' + circle" ng-repeat="circle in config.numberOfCircles"></textarea>
+      </div>
+    </div>
+
+    <button ng-show="config.dataCircle1">VENNERATE THIS GRAPH</button>
+  </div>
+</div>
